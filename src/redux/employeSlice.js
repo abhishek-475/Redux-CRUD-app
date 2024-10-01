@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 const EmployeSlice = createSlice({
   name: "employee",
   initialState: {
-    employee: [{}],
+    employee: [],
   },
   reducers: {
     addUser(state, action) {

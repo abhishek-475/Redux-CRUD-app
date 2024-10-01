@@ -10,7 +10,6 @@ function Users({ handleEdit }) {
   return (
     <>
       <div className="container-fluid mt-4">
-        {employee.length > 0 ? (
           <div className="table-responsive w-100">
             <table className="table ">
               <thead>
@@ -23,7 +22,9 @@ function Users({ handleEdit }) {
                 </tr>
               </thead>
               <tbody>
-                {employee.map((item) => (
+              {employee.length > 0 ? (
+
+                employee.map((item) => (
                   <tr>
                     <td>{item.name}</td>
                     <td>{item.email}</td>
@@ -45,13 +46,14 @@ function Users({ handleEdit }) {
                       </button>
                     </td>
                   </tr>
-                ))}
+                ))
+              ) : (
+                <p className="text-center mt-3">No employees added yet.</p> 
+              )}
               </tbody>
             </table>
           </div>
-        ) : (
-          <p className="text-center mt-3">No employees added yet.</p> // Message shown when no employees exist
-        )}
+    
       </div>
     </>
   );
